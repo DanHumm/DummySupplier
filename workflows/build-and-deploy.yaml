@@ -1,0 +1,32 @@
+name: DanielHumm - DairyDoughSupplies [SupplierAPI]
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'Logistics-Supplier1-API/**'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image
+        run: |
+          cd Logistics-Supplier1-API
+          docker build -t ghcr.io/danhumm/dairydoughsupplies-api:latest .
+
+      - name: Push the Docker image
+        run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
