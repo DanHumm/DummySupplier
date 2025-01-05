@@ -1,0 +1,1074 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Logistics-Supplier1-API</name>
+    </assembly>
+    <members>
+        <member name="T:Logistics_Supplier1_API.Data.MyDbContext">
+            <summary>
+            Represents the database context for the application.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Data.MyDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Logistics_Supplier1_API.Data.MyDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Data.MyDbContext"/> class.
+            </summary>
+            <param name="options">The options for configuring the database context.</param>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Data.MyDbContext.Users">
+            <summary>
+            Gets or sets the DbSet for User entities.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Data.MyDbContext.Orders">
+            <summary>
+            Gets or sets the DbSet for Order entities.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Data.MyDbContext.Products">
+            <summary>
+            Gets or sets the DbSet for Product entities.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Data.MyDbContext.OrderItems">
+            <summary>
+            Gets or sets the DbSet for OrderItem entities.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Data.MyDbContext.InviteCodes">
+            <summary>
+            Gets or sets the DbSet for InviteCode entities.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Data.MyDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the model for the database context.
+            </summary>
+            <param name="modelBuilder">The model builder.</param>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Authentication.LoginRequest">
+            <summary>
+            Represents a request to log in a user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.LoginRequest.Username">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.LoginRequest.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Authentication.RegisterRequest">
+            <summary>
+            Represents a request to register a new user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.RegisterRequest.Username">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.RegisterRequest.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.RegisterRequest.inviteCode">
+            <summary>
+            Gets or sets the invite code for registration.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Authentication.RegisterRequest.Address">
+            <summary>
+            Gets or sets the address of the user.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Order.CreateOrderRequest">
+            <summary>
+            Represents a request to create a new order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.CreateOrderRequest.OrderItems">
+            <summary>
+            Gets or sets the list of order items in the new order.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Order.OrderItemDto">
+            <summary>
+            Represents an item within an order in a create order request.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.OrderItemDto.Sku">
+            <summary>
+            Gets or sets the SKU (Stock Keeping Unit) of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.OrderItemDto.Quantity">
+            <summary>
+            Gets or sets the quantity of the product.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Order.DeleteOrderRequest">
+            <summary>
+            Represents a request to delete an order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.DeleteOrderRequest.OrderId">
+            <summary>
+            Gets or sets the ID of the order to delete.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Order.GetOrderByIdRequest">
+            <summary>
+            Represents a request to get an order by its ID.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.GetOrderByIdRequest.OrderId">
+            <summary>
+            Gets or sets the ID of the order.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Order.UpdateOrderRequest">
+            <summary>
+            Represents a request to update an order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.UpdateOrderRequest.OrderId">
+            <summary>
+            Gets or sets the ID of the order to update.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Order.UpdateOrderRequest.OrderItems">
+            <summary>
+            Gets or sets the list of order items in the updated order.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Product.CreateProductRequest">
+            <summary>
+            Represents a request to create a new product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.CreateProductRequest.Sku">
+            <summary>
+            Gets or sets the SKU (Stock Keeping Unit) of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.CreateProductRequest.Name">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.CreateProductRequest.Price">
+            <summary>
+            Gets or sets the price of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.CreateProductRequest.QuantityInStock">
+            <summary>
+            Gets or sets the initial stock quantity of the product.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Product.DeleteProductRequest">
+            <summary>
+            Represents a request to delete a product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.DeleteProductRequest.Sku">
+            <summary>
+            Gets or sets the SKU of the product to delete.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Product.GetProductBySkuRequest">
+            <summary>
+            Represents a request to get a product by its SKU.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.GetProductBySkuRequest.Sku">
+            <summary>
+            Gets or sets the SKU of the product to retrieve.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest">
+            <summary>
+            Represents a request to update a product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest.Sku">
+            <summary>
+            Gets or sets the SKU of the product to update.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest.Name">
+            <summary>
+            Gets or sets the new name of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest.Price">
+            <summary>
+            Gets or sets the new price of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest.StockQuantity">
+            <summary>
+            Gets or sets the new stock quantity of the product.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.User.CreateUserRequest">
+            <summary>
+            Represents a request to create a new user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.CreateUserRequest.Username">
+            <summary>
+            Gets or sets the username for the new user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.CreateUserRequest.Password">
+            <summary>
+            Gets or sets the password for the new user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.CreateUserRequest.Address">
+            <summary>
+            Gets or sets the address for the new user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.CreateUserRequest.inviteCode">
+            <summary>
+            Gets or sets the invite code for registration.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.User.GetAllUsersRequest">
+            <summary>
+            Represents a request to get all users.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.GetAllUsersRequest.Id">
+            <summary>
+            Gets or sets the ID of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.GetAllUsersRequest.Username">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.GetAllUsersRequest.Role">
+            <summary>
+            Gets or sets the role of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.GetAllUsersRequest.Address">
+            <summary>
+            Gets or sets the address of the user.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.User.GetUserRequest">
+            <summary>
+            Represents a request to get a specific user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.GetUserRequest.Username">
+            <summary>
+            Gets or sets the username of the user to retrieve.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.User.UpdatePasswordRequest">
+            <summary>
+            Represents a request to update a user's password.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.UpdatePasswordRequest.CurrentPassword">
+            <summary>
+            Gets or sets the user's current password.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.UpdatePasswordRequest.NewPassword">
+            <summary>
+            Gets or sets the user's new password.
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.DTOs.User.UpdateUserRequest">
+            <summary>
+            Represents a request to update a user's information.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.UpdateUserRequest.Role">
+            <summary>
+            Gets or sets the new role for the user (optional).
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.DTOs.User.UpdateUserRequest.Address">
+            <summary>
+            Gets or sets the new address for the user (optional).
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.AuthenticationHandler">
+            <summary>
+            Handles authentication-related API requests.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.AuthenticationHandler.Authenticate(Logistics_Supplier1_API.Repositories.IUserRepository,Logistics_Supplier1_API.DTOs.Authentication.LoginRequest)">
+            <summary>
+            Authenticates a user and returns a JWT token.
+            </summary>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <param name="loginRequest">The login request containing username and password.</param>
+            <returns>A JWT token if authentication is successful.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.InviteCodeHandler">
+            <summary>
+            Handles API requests related to invite codes.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.InviteCodeHandler.GetAllInviteCodes(Logistics_Supplier1_API.Repositories.IInviteCodeRepository)">
+            <summary>
+            Gets all invite codes.
+            </summary>
+            <param name="inviteCodeRepository">The repository for accessing invite code data.</param>
+            <returns>A list of all invite codes.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.InviteCodeHandler.GenerateInviteCode(Logistics_Supplier1_API.Repositories.IInviteCodeRepository)">
+            <summary>
+            Generates a new invite code.
+            </summary>
+            <param name="inviteCodeRepository">The repository for accessing invite code data.</param>
+            <returns>The generated invite code.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.OrderHandlers">
+            <summary>
+            Handles API requests related to orders.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.CreateOrder(Logistics_Supplier1_API.Repositories.IOrderRepository,Logistics_Supplier1_API.Repositories.IProductRepository,Microsoft.AspNetCore.Http.HttpContext,Logistics_Supplier1_API.DTOs.Order.CreateOrderRequest)">
+            <summary>
+            Creates a new order.
+            </summary>
+            <param name="orderRepository">The repository for accessing order data.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <param name="httpContext">The HTTP context of the request.</param>
+            <param name="req">The create order request.</param>
+            <returns>The created order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.GetOrderById(System.Int32,Logistics_Supplier1_API.Repositories.IOrderRepository,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets an order by its ID.
+            </summary>
+            <param name="orderId">The ID of the order.</param>
+            <param name="orderRepository">The repository for accessing order data.</param>
+            <param name="httpContext">The HTTP context of the request.</param>
+            <returns>The order with the specified ID.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.UpdateOrderAsync(System.Int32,Logistics_Supplier1_API.Repositories.IOrderRepository,Microsoft.AspNetCore.Http.HttpContext,Logistics_Supplier1_API.Repositories.IProductRepository,Logistics_Supplier1_API.DTOs.Order.UpdateOrderRequest)">
+            <summary>
+            Updates an existing order.
+            </summary>
+            <param name="orderId">The ID of the order to update.</param>
+            <param name="orderRepository">The repository for accessing order data.</param>
+            <param name="httpContext">The HTTP context of the request.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <param name="req">The update order request.</param>
+            <returns>The updated order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.DeleteOrderAsync(System.Int32,Logistics_Supplier1_API.Repositories.IOrderRepository,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Deletes an order.
+            </summary>
+            <param name="orderId">The ID of the order to delete.</param>
+            <param name="orderRepository">The repository for accessing order data.</param>
+            <param name="httpContext">The HTTP context of the request.</param>
+            <returns>A result indicating whether the order was deleted successfully.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.GetAllOrders(Logistics_Supplier1_API.Repositories.IOrderRepository,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets all orders.
+            </summary>
+            <param name="orderRepository">The repository for accessing order data.</param>
+            <param name="httpContext">The HTTP context of the request.</param>
+            <returns>A list of all orders.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.OrderHandlers.CheckStockForOrderItems(Logistics_Supplier1_API.Repositories.IProductRepository,System.Collections.Generic.List{Logistics_Supplier1_API.Models.OrderItem})">
+            <summary>
+            Checks if there is enough stock to fulfill the given order items.
+            </summary>
+            <param name="orderItems">The list of order items to check.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <param name="existingOrderItems">The existing order items (optional).</param>
+            <returns>A result indicating whether there is enough stock.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.ProductHandlers">
+            <summary>
+            Handles API requests related to products.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.ProductHandlers.GetAllProducts(Logistics_Supplier1_API.Repositories.IProductRepository)">
+            <summary>
+            Gets all products.
+            </summary>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <returns>A list of all products.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.ProductHandlers.GetProductBySkuAsync(System.String,Logistics_Supplier1_API.Repositories.IProductRepository)">
+            <summary>
+            Gets a product by its SKU.
+            </summary>
+            <param name="sku">The SKU of the product.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <returns>The product with the specified SKU.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.ProductHandlers.CreateProductAsync(Logistics_Supplier1_API.Repositories.IProductRepository,Logistics_Supplier1_API.DTOs.Product.CreateProductRequest)">
+            <summary>
+            Creates a new product.
+            </summary>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <param name="req">The create product request.</param>
+            <returns>The created product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.ProductHandlers.UpdateProductAsync(Logistics_Supplier1_API.Repositories.IProductRepository,System.Collections.Generic.List{Logistics_Supplier1_API.DTOs.Product.UpdateProductRequest})">
+            <summary>
+            Updates an existing product.
+            </summary>
+            <param name="sku">The SKU of the product to update.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <param name="req">The update product request.</param>
+            <returns>The updated product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.ProductHandlers.DeleteProductAsync(System.String,Logistics_Supplier1_API.Repositories.IProductRepository)">
+            <summary>
+            Deletes a product.
+            </summary>
+            <param name="sku">The SKU of the product to delete.</param>
+            <param name="productRepository">The repository for accessing product data.</param>
+            <returns>A result indicating whether the product was deleted successfully.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.RegistrationHandler">
+            <summary>
+            Handles user registration requests.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.RegistrationHandler.IsValidCreateUserRequest(Logistics_Supplier1_API.DTOs.User.CreateUserRequest,Logistics_Supplier1_API.Repositories.IInviteCodeRepository)">
+            <summary>
+            Checks if the create user request is valid.
+            </summary>
+            <param name="createUserRequest">The create user request.</param>
+            <param name="inviteCodeRepository">The repository for accessing invite code data.</param>
+            <returns>An IResult indicating whether the request is valid.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.RegistrationHandler.RegisterUser(Logistics_Supplier1_API.Repositories.IUserRepository,Logistics_Supplier1_API.Repositories.IInviteCodeRepository,Logistics_Supplier1_API.DTOs.User.CreateUserRequest)">
+            <summary>
+            Registers a new user.
+            </summary>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <param name="inviteCodeRepository">The repository for accessing invite code data.</param>
+            <param name="createUserRequest">The create user request.</param>
+            <returns>An IResult indicating the success or failure of the registration.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Handlers.UserHandlers">
+            <summary>
+            Handles API requests related to users.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.UserHandlers.GetUserByUsernameAsync(System.String,Logistics_Supplier1_API.Repositories.IUserRepository)">
+            <summary>
+            Gets a user by their username.
+            </summary>
+            <param name="username">The username of the user.</param>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <returns>The user with the specified username.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.UserHandlers.GetAllUsersAsync(Logistics_Supplier1_API.Repositories.IUserRepository)">
+            <summary>
+            Gets all users.
+            </summary>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <returns>A list of all users.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.UserHandlers.UpdateUserAsync(System.String,Logistics_Supplier1_API.Repositories.IUserRepository,Logistics_Supplier1_API.DTOs.User.UpdateUserRequest)">
+            <summary>
+            Updates an existing user.
+            </summary>
+            <param name="username">The username of the user to update.</param>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <param name="req">The update user request.</param>
+            <returns>The updated user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Handlers.UserHandlers.DeleteUserAsync(System.String,Logistics_Supplier1_API.Repositories.IUserRepository)">
+            <summary>
+            Deletes a user.
+            </summary>
+            <param name="username">The username of the user to delete.</param>
+            <param name="userRepository">The repository for accessing user data.</param>
+            <returns>A result indicating whether the user was deleted successfully.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Helpers.JwtHelper">
+            <summary>
+            Provides helper methods for working with JWT (JSON Web Token).
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Helpers.JwtHelper.GetUserIdFromJwt(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets the user ID from the JWT token in the HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns>The user ID if found in the JWT token, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Helpers.JwtHelper.GetRoleFromJwt(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets the user's role from the JWT token in the HTTP context.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <returns>The user's role if found in the JWT token, otherwise null.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Models.InviteCode">
+            <summary>
+            Represents an invite code in the system.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.InviteCode.Id">
+            <summary>
+            Gets or sets the unique identifier of the invite code.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.InviteCode.Code">
+            <summary>
+            Gets or sets the code itself.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.InviteCode.UsageCount">
+            <summary>
+            Gets or sets the number of times the code has been used.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.InviteCode.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date of the invite code.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.InviteCode.CreateNewInviteCode(System.String,System.Int32,System.DateTime)">
+            <summary>
+            Creates a new invite code with the specified details.
+            </summary>
+            <param name="newCode">The code itself.</param>
+            <param name="usageCount">The initial usage count.</param>
+            <param name="expirationDate">The expiration date of the code.</param>
+            <returns>The created invite code instance.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.InviteCode.updateUsageCount(System.Int32)">
+            <summary>
+            Updates invite codes usage count
+            </summary>
+            <param name="usageCount">The amount of times a code has been used.</param>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Models.Order">
+            <summary>
+            Represents an order in the system.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Order.Id">
+            <summary>
+            Gets or sets the unique identifier of the order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Order.OrderDate">
+            <summary>
+            Gets or sets the date and time when the order was placed.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Order.LastUpdate">
+            <summary>
+            Gets or sets the date and time when the order was last updated.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Order.UserId">
+            <summary>
+            Gets or sets the ID of the user who placed the order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Order.OrderItems">
+            <summary>
+            Gets or sets the list of order items associated with the order.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Order.#ctor(System.Int32,System.Collections.Generic.List{Logistics_Supplier1_API.Models.OrderItem})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.Order"/> class.
+            </summary>
+            <param name="userId">The ID of the user who placed the order.</param>
+            <param name="orderItems">The list of order items.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Order.updateOrder(System.Int32,System.Collections.Generic.List{Logistics_Supplier1_API.Models.OrderItem})">
+            <summary>
+            Updates the order with new details.
+            </summary>
+            <param name="id">The ID of the order.</param>
+            <param name="orderItems">The new list of order items.</param>
+            <returns>The updated order instance.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Order.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.Order"/> class (required for Entity Framework Core).
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Models.OrderItem">
+            <summary>
+            Represents an item within an order.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.OrderItem.Id">
+            <summary>
+            Gets or sets the unique identifier of the order item.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.OrderItem.ProductSku">
+            <summary>
+            Gets or sets the SKU (Stock Keeping Unit) of the product in the order item.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.OrderItem.Quantity">
+            <summary>
+            Gets or sets the quantity of the product in the order item.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.OrderItem.UnitPrice">
+            <summary>
+            Gets or sets the unit price of the product in the order item.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.OrderItem.#ctor(System.String,System.Int32,System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.OrderItem"/> class.
+            </summary>
+            <param name="productSku">The SKU of the product.</param>
+            <param name="quantity">The quantity of the product.</param>
+            <param name="price">The unit price of the product.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.OrderItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.OrderItem"/> class (required for Entity Framework Core).
+            </summary>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Models.Product">
+            <summary>
+            Represents a product in the system.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Product.Id">
+            <summary>
+            Gets or sets the unique identifier of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Product.Sku">
+            <summary>
+            Gets or sets the SKU (Stock Keeping Unit) of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Product.Name">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Product.Price">
+            <summary>
+            Gets or sets the price of the product.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.Product.StockQuantity">
+            <summary>
+            Gets or sets the stock quantity of the product.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Product.#ctor(System.String,System.String,System.Decimal,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.Product"/> class.
+            </summary>
+            <param name="sku">The SKU of the product.</param>
+            <param name="name">The name of the product.</param>
+            <param name="price">The price of the product.</param>
+            <param name="stockQuantity">The stock quantity of the product.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Product.DecreaseStockQuantity(System.Int32)">
+            <summary>
+            Decreases the stock quantity of the product.
+            </summary>
+            <param name="quantity">The quantity to decrease by.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the quantity is not positive or is greater than the current stock quantity.</exception>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.Product.UpdateProduct(System.String,System.Decimal,System.Int32)">
+            <summary>
+            Updates the product's information.
+            </summary>
+            <param name="name">The new name of the product.</param>
+            <param name="price">The new price of the product.</param>
+            <param name="stockQuantity">The new stock quantity of the product.</param>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Models.User">
+            <summary>
+            Represents a user in the system.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.User.Id">
+            <summary>
+            Gets or sets the unique identifier of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.User.Username">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.User.PasswordHash">
+            <summary>
+            Gets or sets the hashed password of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.User.Role">
+            <summary>
+            Gets or sets the role of the user.
+            </summary>
+        </member>
+        <member name="P:Logistics_Supplier1_API.Models.User.Address">
+            <summary>
+            Gets or sets the address of the user.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.User.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Logistics_Supplier1_API.Models.User"/> class.
+            </summary>
+            <param name="username">The username of the user.</param>
+            <param name="passwordHash">The hashed password of the user.</param>
+            <param name="role">The role of the user.</param>
+            <param name="address">The address of the user.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Models.User.UpdateUser(System.String,System.String)">
+            <summary>
+            Updates the user's information.
+            </summary>
+            <param name="role">The new role of the user (optional).</param>
+            <param name="address">The new address of the user (optional).</param>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.IInviteCodeRepository">
+            <summary>
+            Defines methods for interacting with InviteCode data.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IInviteCodeRepository.GetAllInviteCodesAsync">
+            <summary>
+            Gets all invite codes asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all invite codes.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IInviteCodeRepository.IsValidInviteCodeAsync(System.String)">
+            <summary>
+            Checks if an invite code is valid asynchronously.
+            </summary>
+            <param name="inviteCode">The invite code to check.</param>
+            <returns>A task representing the asynchronous operation. The task result contains true if the invite code is valid, otherwise false.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IInviteCodeRepository.GenerateInviteCodeAsync">
+            <summary>
+            Generates a new invite code asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains the generated invite code.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.IOrderRepository">
+            <summary>
+            Defines methods for interacting with Order data.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.GetAllOrdersAsync">
+            <summary>
+            Gets all orders asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all orders.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.GetOrderByIdAsync(System.Int32)">
+            <summary>
+            Gets an order by its ID asynchronously.
+            </summary>
+            <param name="orderId">The ID of the order to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the order if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.CreateOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Creates a new order asynchronously.
+            </summary>
+            <param name="order">The order to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the ID of the created order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.UpdateOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Updates an existing order asynchronously.
+            </summary>
+            <param name="order">The order to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.DeleteOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Deletes an order asynchronously.
+            </summary>
+            <param name="order">The order to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IOrderRepository.GetOrdersByUserIdAsync(System.Int32)">
+            <summary>
+            Gets all orders for a specific user asynchronously.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <returns>A task representing the asynchronous operation. The task result contains a list of orders for the specified user.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.IProductRepository">
+            <summary>
+            Defines methods for interacting with Product data.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IProductRepository.GetProductBySkuAsync(System.String)">
+            <summary>
+            Gets a product by its SKU asynchronously.
+            </summary>
+            <param name="sku">The SKU of the product to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the product if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IProductRepository.GetAllProductsAsync">
+            <summary>
+            Gets all products asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all products.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IProductRepository.CreateProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Creates a new product asynchronously.
+            </summary>
+            <param name="product">The product to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the created product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IProductRepository.UpdateProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Updates an existing product asynchronously.
+            </summary>
+            <param name="product">The product to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IProductRepository.DeleteProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Deletes a product asynchronously.
+            </summary>
+            <param name="product">The product to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted product.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.IUserRepository">
+            <summary>
+            Defines methods for interacting with User data.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IUserRepository.GetUserByUsernameAsync(System.String)">
+            <summary>
+            Gets a user by their username asynchronously.
+            </summary>
+            <param name="username">The username of the user to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the user if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IUserRepository.GetAllUsersAsync">
+            <summary>
+            Gets all users asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all users.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IUserRepository.CreateUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Creates a new user asynchronously.
+            </summary>
+            <param name="user">The user to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the created user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IUserRepository.UpdateUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Updates an existing user asynchronously.
+            </summary>
+            <param name="user">The user to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.IUserRepository.DeleteUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Deletes a user asynchronously.
+            </summary>
+            <param name="user">The user to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted user.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.InviteCodeRepository">
+            <summary>
+            Provides methods for interacting with InviteCode data in the database.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.InviteCodeRepository.#ctor(Logistics_Supplier1_API.Data.MyDbContext)">
+            <summary>
+            Initializes a new instance of the InviteCodeRepository class.
+            </summary>
+            <param name="context">The database context.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.InviteCodeRepository.GetAllInviteCodesAsync">
+            <summary>
+            Gets all invite codes asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all invite codes.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.InviteCodeRepository.IsValidInviteCodeAsync(System.String)">
+            <summary>
+            Checks if an invite code is valid asynchronously and invalidates the code.
+            </summary>
+            <param name="inviteCode">The invite code to check.</param>
+            <returns>A task representing the asynchronous operation. The task result contains true if the invite code is valid, otherwise false.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.InviteCodeRepository.GenerateInviteCodeAsync">
+            <summary>
+            Generates a new invite code asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains the generated invite code.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.OrderRepository">
+            <summary>
+            Provides methods for interacting with Order data in the database.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.#ctor(Logistics_Supplier1_API.Data.MyDbContext)">
+            <summary>
+            Initializes a new instance of the OrderRepository class.
+            </summary>
+            <param name="context">The database context.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.GetOrderByIdAsync(System.Int32)">
+            <summary>
+            Gets an order by its ID asynchronously.
+            </summary>
+            <param name="orderId">The ID of the order to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the order if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.GetAllOrdersAsync">
+            <summary>
+            Gets all orders asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all orders.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.GetOrdersByUserIdAsync(System.Int32)">
+            <summary>
+            Gets all orders for a specific user asynchronously.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <returns>A task representing the asynchronous operation. The task result contains a list of orders for the specified user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.CreateOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Creates a new order asynchronously.
+            </summary>
+            <param name="order">The order to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the ID of the created order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.UpdateOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Updates an existing order asynchronously.
+            </summary>
+            <param name="order">The order to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated order.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.OrderRepository.DeleteOrderAsync(Logistics_Supplier1_API.Models.Order)">
+            <summary>
+            Deletes an order asynchronously.
+            </summary>
+            <param name="order">The order to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted order.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.ProductRepository">
+            <summary>
+            Provides methods for interacting with Product data in the database.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.#ctor(Logistics_Supplier1_API.Data.MyDbContext)">
+            <summary>
+            Initializes a new instance of the ProductRepository class.
+            </summary>
+            <param name="context">The database context.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.GetAllProductsAsync">
+            <summary>
+            Gets all products asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all products.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.GetProductBySkuAsync(System.String)">
+            <summary>
+            Gets a product by its SKU asynchronously.
+            </summary>
+            <param name="sku">The SKU of the product to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the product if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.CreateProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Creates a new product asynchronously.
+            </summary>
+            <param name="product">The product to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the created product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.UpdateProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Updates an existing product asynchronously.
+            </summary>
+            <param name="product">The product to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated product.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.ProductRepository.DeleteProductAsync(Logistics_Supplier1_API.Models.Product)">
+            <summary>
+            Deletes a product asynchronously.
+            </summary>
+            <param name="product">The product to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted product.</returns>
+        </member>
+        <member name="T:Logistics_Supplier1_API.Repositories.UserRepository">
+            <summary>
+            Provides methods for interacting with User data in the database.
+            </summary>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.#ctor(Logistics_Supplier1_API.Data.MyDbContext)">
+            <summary>
+            Initializes a new instance of the UserRepository class.
+            </summary>
+            <param name="dbcontext">The database context.</param>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.GetUserByUsernameAsync(System.String)">
+            <summary>
+            Gets a user by their username asynchronously.
+            </summary>
+            <param name="username">The username of the user to retrieve.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the user if found, otherwise null.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.GetAllUsersAsync">
+            <summary>
+            Gets all users asynchronously.
+            </summary>
+            <returns>A task representing the asynchronous operation. The task result contains a list of all users.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.CreateUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Creates a new user asynchronously.
+            </summary>
+            <param name="user">The user to create.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the created user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.UpdateUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Updates an existing user asynchronously.
+            </summary>
+            <param name="user">The user to update.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the updated user.</returns>
+        </member>
+        <member name="M:Logistics_Supplier1_API.Repositories.UserRepository.DeleteUserAsync(Logistics_Supplier1_API.Models.User)">
+            <summary>
+            Deletes a user asynchronously.
+            </summary>
+            <param name="user">The user to delete.</param>
+            <returns>A task representing the asynchronous operation. The task result contains the deleted user.</returns>
+        </member>
+    </members>
+</doc>

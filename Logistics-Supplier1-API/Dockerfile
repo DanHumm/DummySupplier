@@ -1,0 +1,27 @@
+﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER $APP_UID
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Logistics-Supplier1-API/Logistics-Supplier1-API.csproj", "Logistics-Supplier1-API/"]
+RUN dotnet restore "Logistics-Supplier1-API/Logistics-Supplier1-API.csproj"
+COPY . .
+WORKDIR "/src/Logistics-Supplier1-API"
+RUN dotnet build "Logistics-Supplier1-API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "Logistics-Supplier1-API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+COPY ./Logistics-Supplier1-API/.env . 
+
+RUN mkdir -p /app/data 
+ENV ConnectionStrings__Default="Data Source=/app/data/supplier-api.db"
+COPY ./Logistics-Supplier1-API/https /app/https 
+ENV Kestrel__Certificates__Default__Password="Dai2ry1Dou24gghSup2plies6Exp2or!t" 
+
+ENTRYPOINT ["dotnet", "Logistics-Supplier1-API.dll"]

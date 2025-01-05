@@ -1,0 +1,9 @@
+private.key
+public.key
+.env
+Creds.txt
+/bin/
+../_site
+../api
+../docs
+../docfx.json

@@ -1,0 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace Logistics_Supplier1_API.DTOs.Product;
+
+/// <summary>
+/// Represents a request to delete a product.
+/// </summary>
+public class DeleteProductRequest
+{
+    /// <summary>
+    /// Gets or sets the SKU of the product to delete.
+    /// </summary>
+    [Required]
+    [MaxLength(100)]
+    public string Sku { get; set; }
+}
