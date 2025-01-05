@@ -24,9 +24,16 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image
-        run: |
-          cd Logistics-Supplier1-API
-          docker build -t ghcr.io/danhumm/dairydoughsupplies-api:latest .
+        uses: docker/build-push-action@v3
+        with:
+          context: ./Logistics-Supplier1-API
+          push: false # We'll push in a separate step
+          tags: ghcr.io/danhumm/dairydoughsupplies-api:latest
+          build-args: |
+            PFX_PASSWORDD=${{ secrets.CERTIFICATE_PASSWORD }}
+            DB_CONN_STRING=${{ secrets.CONNECTION_STRING }}
+            JWT_SERCRET_KEY=${{ secrets.JWT_SERCRET_KEY }}
+            JWT_SERCRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
