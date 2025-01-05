@@ -82,8 +82,8 @@ Check out the Docker instructions for adding the certificate, there is a line th
 3. List the images using the command ```docker images```
 4. Run the image using ```docker run {image-id}```
 5. Find the IP of container. If your using Linux, then ```docker ps``` to get container id then ```docker inspect <container_id> | grep "IPAddress"```
-6. Download the Certificate Authority Certificate i made for it [here](https://github.com/BUAdvDev2024/Logistics-Management-System/tree/main/Docs/DairyDoughSupplies/Certificate).
-7. Follow the instructions for importing the certificate into your browser as well as adding the right entry in your hosts file. You can find instructions on how to do this within my [introduction document](https://github.com/BUAdvDev2024/Logistics-Management-System/blob/main/Docs/DairyDoughSupplies/introduction.md).
+6. Download the Certificate Authority Certificate i made for it [here](https://github.com/DanHumm/DummySupplier/tree/main/Documentation/Certificate)
+7. Follow the instructions for importing the certificate into your browser as well as adding the right entry in your hosts file. You can find instructions on how to do this in this document.
 8. If the container is running, the ca.crt is imported, and a valid entry has been entered into your hosts file, you should be able to access it using https://dairydoughsupplies.internal
 
 Since this application is configured by default as the development prototype, you will be able to access the swagger endpoint which describes the API endpoints. The API follows RestFUL principles so if you get confused about what different endpoints might do check out heading 2 of this [useful resource](https://restfulapi.net/rest-api-best-practices/).
