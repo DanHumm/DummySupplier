@@ -27,13 +27,14 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./Logistics-Supplier1-API
-          push: false # We'll push in a separate step
+          push: false # Push seperately 
           tags: ghcr.io/danhumm/dairydoughsupplies-api:latest
           build-args: |
             PFX_PASSWORDD=${{ secrets.CERTIFICATE_PASSWORD }}
             DB_CONN_STRING=${{ secrets.CONNECTION_STRING }}
             JWT_SERCRET_KEY=${{ secrets.JWT_SERCRET_KEY }}
             JWT_SERCRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
+            Kestrel__Certificates__Default__Password=${{ secrets.Kestrel__Certificates__Default__Password }} 
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
