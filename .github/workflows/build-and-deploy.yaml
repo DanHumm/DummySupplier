@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./Logistics-Supplier1-API
-          push: false # We'll push in a separate step
+          push: false # Push seperately 
           tags: ghcr.io/danhumm/dairydoughsupplies-api:latest
           build-args: |
             PFX_PASSWORDD=${{ secrets.CERTIFICATE_PASSWORD }}
