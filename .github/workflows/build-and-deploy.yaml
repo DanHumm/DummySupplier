@@ -34,6 +34,7 @@ jobs:
             DB_CONN_STRING=${{ secrets.CONNECTION_STRING }}
             JWT_SERCRET_KEY=${{ secrets.JWT_SERCRET_KEY }}
             JWT_SERCRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
+            Kestrel__Certificates__Default__Password=${{ secrets.Kestrel__Certificates__Default__Password }} 
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
