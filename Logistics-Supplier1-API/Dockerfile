@@ -17,11 +17,8 @@ RUN dotnet publish "Logistics-Supplier1-API.csproj" -c $BUILD_CONFIGURATION -o /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY ./Logistics-Supplier1-API/.env . 
 
 RUN mkdir -p /app/data 
-ENV ConnectionStrings__Default="Data Source=/app/data/supplier-api.db"
 COPY ./Logistics-Supplier1-API/https /app/https 
-ENV Kestrel__Certificates__Default__Password="Dai2ry1Dou24gghSup2plies6Exp2or!t" 
 
 ENTRYPOINT ["dotnet", "Logistics-Supplier1-API.dll"]
