@@ -1,6 +1,6 @@
 # DummySupplier: A RESTful API for a fake supplier
 
-This project is an ASP.NET Core Minimal web API that simulates a supplier system. It's created to be a learning experience for myself, focusing on building my first secure RESTful API using some modern .NET technologies.
+This project (project DairyDoughSupplies) is an ASP.NET Core web API that simulates a supplier system. It's created to be a learning experience for myself, focusing on building my first secure RESTful API using some modern .NET technologies.
 
 ## Key Features
 
@@ -61,7 +61,7 @@ This project is an ASP.NET Core Minimal web API that simulates a supplier system
 
 ## Setup
 
-Please refer to the [documentation](https://github.com/DanHumm/DummySupplier/tree/main/Documentation) directory for setup instructions and you can pull the latest package featured in the repo for a fully functioning representation of this project.
+Please refer to the [documentation](https://github.com/DanHumm/DummySupplier/tree/main/Documentation) directory for setup instructions and you can pull the latest package featured in the repo for a fully functioning representation of this project. Please note the setup will need to be completed for HTTPS connection as I have generated my own certificate authority and certificate for the project as the dotnet dev certificate gives SSL errors when dockerized.
 
 ## Feedback
 
