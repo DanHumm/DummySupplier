@@ -22,9 +22,7 @@ RUN mkdir -p /app/data
 COPY ./Logistics-Supplier1-API/https /app/https 
 
 ENV PFX_PASSWORDD=$PFX_PASSWORDD
-ENV ConnectionStrings__Default=$DB_CONN_STRING
 ENV JWT_SECRET_KEY=$JWT_SERCRET_KEY
 ENV JWT_SECRET_ISSUER=$JWT_SERCRET_ISSUER
-ENV Kestrel__Certificates__Default__Password=$Kestrel__Certificates__Default__Password
 
 ENTRYPOINT ["dotnet", "Logistics-Supplier1-API.dll"]
