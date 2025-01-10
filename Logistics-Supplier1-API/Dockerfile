@@ -1,4 +1,8 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+ARG PFX_PASSWORDD
+ARG JWT_SECRET_KEY
+ARG JWT_SECRET_ISSUER
+ 
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER $APP_UID
 WORKDIR /app
 
@@ -21,9 +25,9 @@ COPY --from=publish /app/publish .
 RUN mkdir -p /app/data 
 COPY ./Logistics-Supplier1-API/https /app/https 
 
-ENV PFX_PASSWORDD=${{ secrets.PFX_PASSWORD }}
-ENV JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}
-ENV JWT_SECRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
+ENV PFX_PASSWORDD=$PFX_PASSWORDD
+ENV JWT_SECRET_KEY=$JWT_SECRET_KEY
+ENV JWT_SECRET_ISSUER=$JWT_SECRET_ISSUER
 
 
 ENTRYPOINT ["dotnet", "Logistics-Supplier1-API.dll"]
