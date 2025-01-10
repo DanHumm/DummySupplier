@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'Logistics-Supplier1-API/**'
+  workflow_dispatch:
 
 env:
   PFX_PASSWORD: ${{ secrets.PFX_PASSWORD }}
