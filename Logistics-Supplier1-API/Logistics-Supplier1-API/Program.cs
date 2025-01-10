@@ -22,6 +22,10 @@ builder.WebHost.ConfigureKestrel(options =>
         {
             throw new Exception("PFX_PASSWORD is missing: " + Environment.GetEnvironmentVariable("PFX_PASSWORD"));
         }
+        else
+        {
+            throw new Exception("PFX_PASSWORD is PRESENT: " + Environment.GetEnvironmentVariable("PFX_PASSWORD"));
+        }
         listenOptions.UseHttps("./https/server.pfx", Environment.GetEnvironmentVariable("PFX_PASSWORD"));
     });
 });
