@@ -1,4 +1,4 @@
-name: DanielHumm - DairyDoughSupplies [SupplierAPI]
+name: Build and publish API image
 
 on:
   push:
