@@ -1,10 +1,16 @@
-name: DanielHumm - DairyDoughSupplies [SupplierAPI]
+name: Build and publish API image
 
 on:
   push:
     branches: [ "main" ]
     paths:
       - 'Logistics-Supplier1-API/**'
+  workflow_dispatch:
+
+env:
+  PFX_PASSWORD: ${{ secrets.PFX_PASSWORD }}
+  JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+  JWT_SECRET_ISSUER: ${{ secrets.JWT_SECRET_ISSUER }}
 
 jobs:
   build-and-push:
@@ -30,9 +36,9 @@ jobs:
           push: false # Push seperately 
           tags: ghcr.io/danhumm/dairydoughsupplies-api:latest
           build-args: |
-            PFX_PASSWORD=${{ secrets.PFX_PASSWORD }}
-            JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}
-            JWT_SECRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
+            PFX_PASSWORD=$PFX_PASSWORD
+            JWT_SECRET_KEY=$JWT_SECRET_KEY
+            JWT_SECRET_ISSUER=$JWT_SECRET_ISSUER
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
