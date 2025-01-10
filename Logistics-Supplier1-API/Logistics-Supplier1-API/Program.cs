@@ -59,7 +59,7 @@ builder.Services.AddSwaggerGen(swag =>
     {
         Title = "[DEV] DairyDoughSupplies API",
         Version = "v1",
-        Description = "Development version of the DairyDoughSupplies API. Should you require a production version of the application, please raise an issue on the Logistics Management Github Repository or contact me directly via <a href='mailto:s5416877@bournemouth.ac.uk'>s5416877@bournemouth.ac.uk</a>",
+        Description = "Development version of the DairyDoughSupplies API.",
     });
     var securityScheme = new OpenApiSecurityScheme
     {
@@ -160,7 +160,7 @@ app.MapGet("/", () =>
         { "documentation", "/swagger" },
         {
             "Notes",
-            "This is a development environment, therefore documentation is openly accessible. If you require a production version of the application, please raise an issue on the Logistics Management Github Repository or contact me directly via s5416877@bournemouth.ac.uk"
+            "This is a development environment"
         },
     };
 
