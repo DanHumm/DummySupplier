@@ -29,6 +29,10 @@ jobs:
           context: ./Logistics-Supplier1-API
           push: false # Push seperately 
           tags: ghcr.io/danhumm/dairydoughsupplies-api:latest
+          build-args: |
+            PFX_PASSWORDD=${{ secrets.PFX_PASSWORD }}
+            JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}
+            JWT_SECRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
