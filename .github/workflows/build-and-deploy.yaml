@@ -42,4 +42,4 @@ jobs:
         run: |
           echo "PFX_PASSWORD: ${{ secrets.PFX_PASSWORD }}"
           echo "JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}"
-          echo "JWT_SECRET_ISSUER: ${{ secrets.JWT_SECRET_ISSUER }}
+          echo "JWT_SECRET_ISSUER: ${{ secrets.JWT_SECRET_ISSUER }}"
