@@ -25,7 +25,7 @@ COPY --from=publish /app/publish .
 RUN mkdir -p /app/data 
 COPY ./Logistics-Supplier1-API/https /app/https 
 
-ENV PFX_PASSWORDD=$PFX_PASSWORDD
+ENV PFX_PASSWORD=$PFX_PASSWORD
 ENV JWT_SECRET_KEY=$JWT_SECRET_KEY
 ENV JWT_SECRET_ISSUER=$JWT_SECRET_ISSUER
 
