@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj": {}
+    "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj": {
+    "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
+        "projectUniqueName": "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
         "projectName": "Logistics-Supplier1-API",
-        "projectPath": "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
+        "projectPath": "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
         "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\obj\\",
+        "outputPath": "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dan\\AppData\\Roaming\\NuGet\\NuGet.Config"

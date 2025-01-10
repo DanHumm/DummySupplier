@@ -19,6 +19,7 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(443, listenOptions =>
     {
         listenOptions.UseHttps("./https/server.pfx", Environment.GetEnvironmentVariable("PFX_PASSWORD"));
+        Console.WriteLine("PFX PW: "+Environment.GetEnvironmentVariable("PFX_PASSWORD"));
     });
 });
 

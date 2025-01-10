@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hrO/RgV7/KY=",
+  "dgSpecHash": "6Rja8D9GXTA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dan\\RiderProjects\\Logistics-Management-System\\src\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
+  "projectFilePath": "C:\\Users\\Dan\\RiderProjects\\DummySupplier\\Logistics-Supplier1-API\\Logistics-Supplier1-API\\Logistics-Supplier1-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dan\\.nuget\\packages\\bcrypt\\1.0.0\\bcrypt.1.0.0.nupkg.sha512",
     "C:\\Users\\Dan\\.nuget\\packages\\bcrypt.net\\0.1.0\\bcrypt.net.0.1.0.nupkg.sha512",
