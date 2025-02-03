@@ -5,7 +5,7 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-RUN chmod +w ./Logistics-Supplier1-API/encrypted-supplier.db
+RUN chmod +w ./Logistics-Supplier1-API/Logistics-Supplier1-API/encrypted-supplier.db
 COPY ["Logistics-Supplier1-API/Logistics-Supplier1-API.csproj", "Logistics-Supplier1-API/"]
 RUN dotnet restore "Logistics-Supplier1-API/Logistics-Supplier1-API.csproj"
 COPY . .
