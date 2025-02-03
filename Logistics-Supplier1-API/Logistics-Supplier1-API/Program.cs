@@ -22,7 +22,7 @@ builder.WebHost.ConfigureKestrel(options =>
     });
 });
 
-var connectionString = "Data Source=encrypted-supplier.db;Password="+Environment.GetEnvironmentVariable("DB_PASSWORD");
+var connectionString = "Data Source="+Directory.GetCurrentDirectory()+"/data/encrypted-supplier.db;Password="+Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
     options =>
