@@ -20,6 +20,8 @@ COPY --from=publish /app/publish .
 
 RUN mkdir -p /app/data 
 COPY ./Logistics-Supplier1-API/https /app/https 
+COPY ./Logistics-Supplier1-API/encrypted-supplier.db /app
+
 
 ARG PFX_PASSWORD
 ARG JWT_SECRET_KEY
