@@ -34,7 +34,7 @@ jobs:
             PFX_PASSWORD=${{ secrets.PFX_PASSWORD }}
             JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}
             JWT_SECRET_ISSUER=${{ secrets.JWT_SECRET_ISSUER }}
-            DB_PASSWORD=${{ secrets.JWT_SECRET_ISSUER }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
 
       - name: Push the Docker image
         run: docker push ghcr.io/danhumm/dairydoughsupplies-api:latest
