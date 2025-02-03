@@ -5,6 +5,7 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+RUN chmod +w ./Logistics-Supplier1-API/encrypted-supplier.db
 COPY ["Logistics-Supplier1-API/Logistics-Supplier1-API.csproj", "Logistics-Supplier1-API/"]
 RUN dotnet restore "Logistics-Supplier1-API/Logistics-Supplier1-API.csproj"
 COPY . .
@@ -21,7 +22,6 @@ COPY --from=publish /app/publish .
 RUN mkdir -p /app/data 
 COPY ./Logistics-Supplier1-API/https /app/https 
 COPY ./Logistics-Supplier1-API/encrypted-supplier.db /app/data
-RUN chmod +w /app/data/encrypted-supplier.db
 
 ARG PFX_PASSWORD
 ARG JWT_SECRET_KEY
